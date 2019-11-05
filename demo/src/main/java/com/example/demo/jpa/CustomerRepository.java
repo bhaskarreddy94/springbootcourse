@@ -8,4 +8,5 @@ import com.example.demo.model.Customer;
 
 public interface CustomerRepository  extends JpaRepository<Customer, Long>{
 List<Customer> findByFirstName(String firstname);
+List<Customer> findByLastName(String lastName);
 }

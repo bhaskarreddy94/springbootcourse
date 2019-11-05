@@ -26,6 +26,11 @@ public class CustomerResource {
 	public List<Customer> getcustomers(@PathVariable("firstname") String firstname) {
 	return	customerRepository.findByFirstName(firstname);
 	}
+	
+	@GetMapping(value="/all/by/{lastname}",produces=MediaType.APPLICATION_JSON_VALUE)
+	public List<Customer> getcustomersByLastName(@PathVariable("lastname") String lastName) {
+	return	customerRepository.findByLastName(lastName);
+	}
 	@PostMapping(value="/save",produces=MediaType.APPLICATION_JSON_VALUE,consumes=MediaType.APPLICATION_JSON_VALUE)
 	public Customer saveCustomer(@RequestBody Customer customer) {
 	return	customerRepository.save(customer);

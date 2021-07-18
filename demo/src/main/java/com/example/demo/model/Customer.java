@@ -14,7 +14,7 @@ public class Customer {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private long id;
 	private String firstName;
-	private String lastname;
+	private String lastName;
 	public long getId() {
 		return id;
 	}
@@ -27,17 +27,18 @@ public class Customer {
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
 	}
-	
+	public String getLastName() {
+		return lastName;
+	}
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
 	@Override
 	public String toString() {
-		return "Customer [id=" + id + ", firstName=" + firstName + ", lastname=" + lastname + "]";
+		return "Customer [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + "]";
 	}
-	public String getLastname() {
-		return lastname;
-	}
-	public void setLastname(String lastname) {
-		this.lastname = lastname;
-	}
+	
+	
 	
 
 }

@@ -22,10 +22,11 @@ public class CustomerResource {
 	public List<Customer> getcustomers() {
 	return	customerRepository.findAll();
 	}
-	//get customer details by firstName
-	@GetMapping(value="/all/{firstname}",produces=MediaType.APPLICATION_JSON_VALUE)
+	
+	// get customer details by firstName
+	@GetMapping(value = "/all/{firstname}", produces = MediaType.APPLICATION_JSON_VALUE)
 	public List<Customer> getcustomers(@PathVariable("firstname") String firstname) {
-	return	customerRepository.findByFirstName(firstname);
+		return customerRepository.findByFirstName(firstname);
 	}
 	//get customer by lastName
 	@GetMapping(value="/all/by/{lastname}",produces=MediaType.APPLICATION_JSON_VALUE)
